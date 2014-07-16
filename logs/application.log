@@ -1,0 +1,57 @@
+2014-07-15 21:29:17,147 - [INFO] - from play in main 
+Listening for HTTP on port 8888...
+
+2014-07-15 21:29:30,367 - [INFO] - from play in play-akka.actor.default-dispatcher-1 
+database [default] connected at jdbc:mysql://localhost:3307/subscriptionprod-062414
+
+2014-07-15 21:29:31,179 - [ERROR] - from application in New I/O  worker #1 
+
+
+! @6ipj2oeb5 - Internal server error, for request [GET /test] ->
+
+play.api.Configuration$$anon$1: Configuration error [path parameter: Invalid path ' - could not find datasource for magento': Token not allowed in path expression: '-' (you can double-quote this token if you really want it here)]
+	at play.api.Configuration$.play$api$Configuration$$configError(Configuration.scala:71) ~[play_2.9.1.jar:2.0.4]
+	at play.api.Configuration.reportError(Configuration.scala:258) ~[play_2.9.1.jar:2.0.4]
+	at play.Configuration.reportError(Configuration.java:119) ~[play_2.9.1.jar:2.0.4]
+	at play.db.ebean.EbeanPlugin.onStart(EbeanPlugin.java:46) ~[play_2.9.1.jar:2.0.4]
+	at play.api.Play$$anonfun$start$1.apply(Play.scala:60) ~[play_2.9.1.jar:2.0.4]
+	at play.api.Play$$anonfun$start$1.apply(Play.scala:60) ~[play_2.9.1.jar:2.0.4]
+	at scala.collection.LinearSeqOptimized$class.foreach(LinearSeqOptimized.scala:59) ~[scala-library.jar:0.11.3]
+	at scala.collection.immutable.List.foreach(List.scala:45) ~[scala-library.jar:0.11.3]
+	at play.api.Play$.start(Play.scala:60) ~[play_2.9.1.jar:2.0.4]
+	at play.core.ReloadableApplication$$anonfun$get$1$$anonfun$apply$3$$anonfun$1.apply(ApplicationProvider.scala:125) ~[play_2.9.1.jar:2.0.4]
+	at play.core.ReloadableApplication$$anonfun$get$1$$anonfun$apply$3$$anonfun$1.apply(ApplicationProvider.scala:112) ~[play_2.9.1.jar:2.0.4]
+	at scala.Option.map(Option.scala:133) ~[scala-library.jar:0.11.3]
+	at play.core.ReloadableApplication$$anonfun$get$1$$anonfun$apply$3.apply(ApplicationProvider.scala:112) ~[play_2.9.1.jar:2.0.4]
+	at play.core.ReloadableApplication$$anonfun$get$1$$anonfun$apply$3.apply(ApplicationProvider.scala:110) ~[play_2.9.1.jar:2.0.4]
+	at scala.Either$RightProjection.flatMap(Either.scala:277) ~[scala-library.jar:0.11.3]
+	at play.core.ReloadableApplication$$anonfun$get$1.apply(ApplicationProvider.scala:110) ~[play_2.9.1.jar:2.0.4]
+	at play.core.ReloadableApplication$$anonfun$get$1.apply(ApplicationProvider.scala:110) ~[play_2.9.1.jar:2.0.4]
+	at akka.dispatch.Future$$anon$3.liftedTree1$1(Future.scala:195) ~[akka-actor.jar:2.0.2]
+	at akka.dispatch.Future$$anon$3.run(Future.scala:194) ~[akka-actor.jar:2.0.2]
+	at akka.dispatch.TaskInvocation.run(AbstractDispatcher.scala:94) ~[akka-actor.jar:2.0.2]
+	at akka.jsr166y.ForkJoinTask$AdaptedRunnableAction.exec(ForkJoinTask.java:1381) ~[akka-actor.jar:2.0.2]
+	at akka.jsr166y.ForkJoinTask.doExec(ForkJoinTask.java:259) ~[akka-actor.jar:2.0.2]
+	at akka.jsr166y.ForkJoinPool$WorkQueue.runTask(ForkJoinPool.java:975) ~[akka-actor.jar:2.0.2]
+	at akka.jsr166y.ForkJoinPool.runWorker(ForkJoinPool.java:1479) ~[akka-actor.jar:2.0.2]
+	at akka.jsr166y.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:104) ~[akka-actor.jar:2.0.2]
+Caused by: com.typesafe.config.ConfigException$BadPath: path parameter: Invalid path ' - could not find datasource for magento': Token not allowed in path expression: '-' (you can double-quote this token if you really want it here)
+	at com.typesafe.config.impl.Parser.parsePathExpression(Parser.java:881) ~[akka-actor.jar:2.0.2]
+	at com.typesafe.config.impl.Parser.parsePath(Parser.java:921) ~[akka-actor.jar:2.0.2]
+	at com.typesafe.config.impl.Path.newPath(Path.java:206) ~[akka-actor.jar:2.0.2]
+	at com.typesafe.config.impl.SimpleConfig.hasPath(SimpleConfig.java:70) ~[akka-actor.jar:2.0.2]
+	at play.api.Configuration.reportError(Configuration.scala:258) ~[play_2.9.1.jar:2.0.4]
+	at play.api.db.BoneCPApi.play$api$db$BoneCPApi$$error(DB.scala:275) ~[play_2.9.1.jar:2.0.4]
+	at play.api.db.BoneCPApi$$anonfun$getDataSource$5.apply(DB.scala:411) ~[play_2.9.1.jar:2.0.4]
+	at play.api.db.BoneCPApi$$anonfun$getDataSource$5.apply(DB.scala:411) ~[play_2.9.1.jar:2.0.4]
+	at scala.Option.getOrElse(Option.scala:108) ~[scala-library.jar:0.11.3]
+	at play.api.db.BoneCPApi.getDataSource(DB.scala:411) ~[play_2.9.1.jar:2.0.4]
+	at play.api.db.DB$$anonfun$getDataSource$1.apply(DB.scala:138) ~[play_2.9.1.jar:2.0.4]
+	at play.api.db.DB$$anonfun$getDataSource$1.apply(DB.scala:138) ~[play_2.9.1.jar:2.0.4]
+	at scala.Option.map(Option.scala:133) ~[scala-library.jar:0.11.3]
+	at play.api.db.DB$.getDataSource(DB.scala:138) ~[play_2.9.1.jar:2.0.4]
+	at play.api.db.DB.getDataSource(DB.scala) ~[play_2.9.1.jar:2.0.4]
+	at play.db.DB.getDataSource(DB.java:22) ~[play_2.9.1.jar:2.0.4]
+	at play.db.ebean.EbeanPlugin.onStart(EbeanPlugin.java:44) ~[play_2.9.1.jar:2.0.4]
+	... 21 common frames omitted
+
